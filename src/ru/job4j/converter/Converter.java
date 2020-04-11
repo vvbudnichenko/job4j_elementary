@@ -10,10 +10,9 @@ public class Converter {
         return rsl2;
     }
     public static void main(String[]args){
-        int rub = 7000;
-        int rsl = Converter.rubleToEuro(rub);
+        int rsl = Converter.rubleToEuro(7000);
         System.out.println("При данном курсе валют сумма размерна на евро равна " + rsl);
-        int rs2 = Converter.rubleToDollar(rub);
+        int rs2 = Converter.rubleToDollar(7000);
         System.out.println("При данном курсе валют сумма размерна на доллары равна " + rs2);
     }
 }

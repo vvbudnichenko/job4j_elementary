@@ -14,6 +14,6 @@ public class Converter {
         int rsl = Converter.rubleToEuro(rub);
         System.out.println("При данном курсе валют сумма размерна на евро равна " + rsl);
         int rs2 = Converter.rubleToDollar(rub);
-        System.out.println("При данном курсе валют сумма размерна на евро равна " + rs2);
+        System.out.println("При данном курсе валют сумма размерна на доллары равна " + rs2);
     }
 }

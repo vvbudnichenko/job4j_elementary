@@ -8,7 +8,7 @@ public class Point {
         return rsl;
     }
     public static void main(String[]args){
-        double result = Point.distance(2, 0, 2, 0);
+        double result = Point.distance(2, 3, 0, 0);
         System.out.println("result (0, 0) to (2, 0) is " + result);
     }
 }

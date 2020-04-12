@@ -1,7 +1,7 @@
 package ru.job4j;
 
 public class TypeDataForVariables {
-    public static void main(String[]args){
+    public static void main(String[]args) {
         int age;
         char man, woman;
         short height;

@@ -1,7 +1,7 @@
 package ru.job4j;
 
 public class Variables {
-    public static void main(String[]args){
+    public static void main(String[]args) {
         byte age = 32;
         char sex1 = 'w';
         char sex2 = 'm';

@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class PointTest {
 
     @Test
-    public void WhenEnterPointsThenLenght() {
+    public void whenEnterPointsThenLenght() {
         int x1 = 2;
         int y1 = 3;
         int x2 = 0;

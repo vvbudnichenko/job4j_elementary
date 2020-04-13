@@ -10,8 +10,8 @@ public class Fit {
         return rslt;
     }
     public static void main(String[]args) {
-        double man = Fit.manWeight(193.5);
-        double woman = Fit.womanWeight(177.1);
+        double man = Fit.manWeight(190.0);
+        double woman = Fit.womanWeight(170.0);
         System.out.println("Man 100 is " + man);
         System.out.println("Woman 100 is " + woman);
         }

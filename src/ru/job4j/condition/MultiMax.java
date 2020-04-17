@@ -6,9 +6,7 @@ public class MultiMax {
         int result = a;
         if (a > b && b > c) {
         result = a;
-        } else if (b > a && b > c) {
-            result = b;
-        }  else if (b == a && b == c) {
+        } else if (b >= a && b >= c) {
             result = b;
         } else {
             result = c;
@@ -16,7 +14,7 @@ public class MultiMax {
         return result;
     }
     public static void main(String[] args) {
-        int nm = MultiMax.max(1, 9, 8);
+        int nm = MultiMax.max(9, 10, 11);
         System.out.println(nm);
     }
 }

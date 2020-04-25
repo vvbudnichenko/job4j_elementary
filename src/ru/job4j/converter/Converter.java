@@ -1,14 +1,30 @@
 package ru.job4j.converter;
 
 public class Converter {
+    /**
+     * Method rubleToEoro.
+     * @param value1 is int value.
+     * @return There's returned rsl.
+     */
     public static int rubleToEuro(int value1) {
         int rsl = value1 / 70;
         return rsl;
     }
+
+    /**
+     * Method rubleToDollar
+     * @param value2 is int value2
+     * @return There's returned rsl2
+     */
     public static int rubleToDollar(int value2) {
         int rsl2 = value2 / 60;
         return rsl2;
     }
+
+    /**
+     * Method main.
+     * @param args - args(command line value).
+     */
     public static void main(String[]args) {
         int rsl = Converter.rubleToEuro(140);
         System.out.println("При данном курсе валют сумма размерна на евро равна " + rsl);

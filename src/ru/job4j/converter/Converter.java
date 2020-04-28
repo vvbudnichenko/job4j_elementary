@@ -1,5 +1,11 @@
 package ru.job4j.converter;
 
+/**
+ * This class exchanges rubles to another currencies
+ * @author Vladimir Budnichenko
+ * @since 25.04.2020
+ * @version 1.2
+ */
 public class Converter {
     /**
      * Method rubleToEoro.

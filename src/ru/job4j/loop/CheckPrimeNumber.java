@@ -4,7 +4,7 @@ public class CheckPrimeNumber {
     public static boolean check(int number) {
         boolean prime = number > 1;
         for (int a = 2; a * a <= number; a++) {
-            if (number % a != 0) break;
+            if (number % a != 0 & number % 3 != 0) break;
             return false;
         }
         return prime;

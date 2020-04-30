@@ -8,8 +8,6 @@ public class Fitness {
             ivan *= 3;
             nick *= 2;
             month++;
-            ivan *= month;
-            nick *= month;
         }
         return month;
     }

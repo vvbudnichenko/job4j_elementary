@@ -1,3 +1,4 @@
+
 package ru.job4j.loop;
 
 public class Fitness {
@@ -7,12 +8,14 @@ public class Fitness {
             month++;
             ivan *= month;
             nik *= month;
-            for (; ivan * 3 > nik * 2; )
+            if (nik * 2 < ivan * 3) {
                 return month;
+            }
         }
         return month;
     }
 }
+
 
 
 

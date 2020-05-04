@@ -8,8 +8,6 @@ public class Turn {
                 array[array.length - i - 1] = array[i];
                 array[i] = temp;
             }
-
-
         }
         return array;
     }

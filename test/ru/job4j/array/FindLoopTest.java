@@ -6,51 +6,46 @@ import static org.junit.Assert.assertThat;
 
 public class FindLoopTest {
 
+
     @Test
-    public void whenArrayHas5Then0() {
-        FindLoop find = new FindLoop();
+    public void whenArrayHasLength5Then0() {
         int[] input = new int[]{5, 10, 3};
         int value = 5;
-        int result = find.indexOf(input, value);
+        int result = FindLoop.indexOf(input, value);
         int expect = 0;
         assertThat(result, is(expect));
     }
 
     @Test
-    public void whenArrayHas9Then0() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[]{7, 8, 9};
-        int value = 10;
-        int result = find.indexOf(input, value);
-        int expect = -1;
-        assertThat(result, is(expect));
-    }
-
-    @Test
-    public void whenArrayHas0Then128() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[]{0, 2, 128};
+    public void whenFind3() {
+        int[] input = new int[]{5, 2, 10, 2, 4};
         int value = 2;
-        int result = find.indexOf(input, value);
-        int expect = 1;
+        int start = 2;
+        int finish = 4;
+        int result = FindLoop.indexOf(input, value, start, finish);
+        int expect = 3;
         assertThat(result, is(expect));
     }
+
     @Test
-    public void whenArrayHas0Then682() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[]{0, 2, 682};
-        int value = 682;
-        int result = find.indexOf(input, value);
-        int expect = 2;
+    public void whenFind1() {
+        int[] input = new int[]{0, 0, 0, 0, 1};
+        int value = 1;
+        int start = 1;
+        int finish = 4;
+        int result = FindLoop.indexOf(input, value, start, finish);
+        int expect = 4;
         assertThat(result, is(expect));
     }
+
     @Test
-    public void whenArrayHas0Then0() {
-        FindLoop find = new FindLoop();
-        int[] input = new int[]{0, 9, 0};
-        int value = 0;
-        int result = find.indexOf(input, value);
-        int expect = 0;
+    public void whenArrayHasLength3Then7() {
+        int[] input = new int[]{3, 4, 5, 6, 7};
+        int value = 3;
+        int start = 2;
+        int finish = 4;
+        int result = FindLoop.indexOf(input, value, start, finish);
+        int expect = -1;
         assertThat(result, is(expect));
     }
 }

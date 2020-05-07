@@ -22,4 +22,12 @@ public class EndsWithTest {
         boolean result = EndsWith.endsWith(word, post);
         assertThat(result, is(false));
     }
+
+    @Test
+    public void whenNotEndWithTrueThenFalse() {
+        char[] word = {'H', 'e', 'l', 'l', 'o'};
+        char[] post = {'a', 'o'};
+        boolean result = EndsWith.endsWith(word, post);
+        assertThat(result, is(false));
+    }
 }

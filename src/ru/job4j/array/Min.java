@@ -7,7 +7,7 @@ public class Min {
             if (array[index] >= array[index + 1]) {
                 min = array[index + 1];
             } else if (array[index + 1] > array[index]) {
-                min = array[index++];
+                array[index] = array[index++];
             }
         }
         return min;

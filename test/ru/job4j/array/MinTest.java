@@ -24,6 +24,6 @@ public class MinTest {
 
     @Test
     public void whenFiveMiddleMin() {
-        assertThat(Min.findMin(new int[]{70, 7, 7, 2, 7}), is(2));
+        assertThat(Min.findMin(new int[]{2, 7, 1, 1, 0}), is(0));
     }
 }

@@ -6,9 +6,10 @@ public class Defragment {
             if (array[index] == null) {
                 int point = index + 1; // указатель, на не null ячейку.
                 while (point < array.length) {
+                    int temp = index;
                     if (array[point] != null) {
                         array[index] = array[point];
-                        array[point] = array[index + 1];
+                        array[point] = array[temp];
                         break;
                     }
                 }

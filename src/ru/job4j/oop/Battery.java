@@ -14,11 +14,12 @@ public class Battery {
         Battery powBank = new Battery(70);
         Battery cellPhone = new Battery(20);
         Battery samPad = new Battery(10);
-        cellPhone.exchange(powBank);
-        System.out.println(powBank.load);
-        System.out.println(cellPhone.load);
-        samPad.exchange(cellPhone);
-        System.out.println(cellPhone.load);
-        System.out.println(samPad.load);
+        Battery another = new Battery(0);
+        another.exchange(powBank);
+        System.out.println(another.load);
+        another.exchange(cellPhone);
+        System.out.println(another.load);
+        another.exchange(samPad);
+        System.out.println(another.load);
     }
 }

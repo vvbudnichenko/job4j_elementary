@@ -17,7 +17,17 @@ public class MaxTest {
     }
     @Test
     public void whenMax0To2Then0() {
-        int result = Max.max(0, 0);
-        assertThat(result, is(0));
+        int result = Max.max(3, 3);
+        assertThat(result, is(3));
+    }
+    @Test
+    public void whenMaxThirdValue() {
+        int result = Max.max(1, 4, 9);
+        assertThat(result, is(9));
+    }
+    @Test
+    public void whenMaxForthValue() {
+        int result = Max.max(1, 4, 9, 11);
+        assertThat(result, is(11));
     }
 }

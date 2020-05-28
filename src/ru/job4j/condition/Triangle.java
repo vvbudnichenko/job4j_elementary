@@ -26,7 +26,7 @@ public class Triangle {
      * @return Периметр.
      */
     public double peroid(double a, double b, double c) {
-        return a + b + c;
+        return (a + b + c) / 2;
     }
 
     /**
@@ -63,10 +63,7 @@ public class Triangle {
      * @return
      */
     private boolean exist(double a, double c, double b) {
-        if (a + c > b && a + b > c && b + c > a) {
-            return false;
-        }
-        return false;
+            return (a + c > b && a + b > c && b + c > a);
     }
 }
 

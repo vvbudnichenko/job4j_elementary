@@ -7,19 +7,22 @@ public class Battery {
         this.load = power;
     }
     public void exchange(Battery another) {
-        this.load = this.load + another.load;
-        another.load = 0;
+        another.load = this.load + another.load;
+        this.load = 0;
     }
     public static void main(String[] args) {
         Battery powBank = new Battery(70);
         Battery cellPhone = new Battery(20);
         Battery samPad = new Battery(10);
         Battery another = new Battery(0);
-        another.exchange(powBank);
+        powBank.exchange(another);
         System.out.println(another.load);
-        another.exchange(cellPhone);
+        cellPhone.exchange(another);
         System.out.println(another.load);
-        another.exchange(samPad);
+        samPad.exchange(another);
         System.out.println(another.load);
+        System.out.println(powBank.load);
+        System.out.println(cellPhone.load);
+        System.out.println(samPad.load);
     }
 }

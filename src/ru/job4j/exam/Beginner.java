@@ -3,19 +3,16 @@ package ru.job4j.exam;
 public class Beginner {
     public static int[] sameQuantity(int[] array, int[] num) {
         int[] arr = new int[array.length];
-        arr = array;
         for (int index = 0; index < array.length; index++) {
-            System.out.print(arr[index]);
+            if (array[index] == num[index]) {
+                arr[index] = array[index];
+                System.out.println(arr[index]);
+            } else if (array[index] != num[index]) {
+                continue;
+            }
         }
-        System.out.println();
-        int[] numy = new int[array.length];
-        numy = num;
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(numy[i]);
-        }
-        return numy;
+        return arr;
     }
-
 
     public static boolean orderOr(int[] arrays) {
         boolean rsl = true;

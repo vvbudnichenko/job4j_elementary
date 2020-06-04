@@ -9,10 +9,18 @@ public class BeginnerTest {
 
     @Test
     public void sameQuantity() {
-        int[] fir = new int[] {1, 2, 3, 5};
-        int[] sec = new int[] {5, 5, 4, 7, 8, 5, 6};
+        int[] fir = new int[] {5, 5, 5, 4, 5};
+        int[] sec = new int[] {5, 5, 4, 5, 5};
         int[] result = Beginner.sameQuantity(fir, sec);
-        int[] expected = new int[] {5, 5, 4, 7};
+        int[] expected = new int[] {5, 5, 0, 0, 5};
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void sameQuantity2() {
+        int[] fir = new int[]{1, 2, 1, 1, 3, 0, 7};
+        int[] sec = new int[]{1, 5, 4, 5, 3, 0, 7};
+        int[] result = Beginner.sameQuantity(fir, sec);
+        int[] expected = new int[]{1, 0, 0, 0, 3, 0, 7};
         assertThat(result, is(expected));
     }
 

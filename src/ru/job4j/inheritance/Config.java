@@ -1,9 +1,9 @@
 package ru.job4j.inheritance;
 
 public class Config {
-    private String name; // Полю присвоено модификатор private, вместо default
-    private int position; // Полю присвоено модификатор private, вместо default
-    private String[] properties; // Полю присвоено модификатор private, вместо default
+    private String name; // Полю присвоен модификатор private, вместо default
+    private int position; // Полю присвоен модификатор private, вместо default
+    private String[] properties; // Полю присвоен модификатор private, вместо default
 
     public Config(String name) {
         this.name = name;

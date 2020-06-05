@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 public class Doctor extends Profession {
-    String diagnose;
-    String hospital;
+    private String diagnose;
+    private String hospital;
 
     public Doctor() {
     }

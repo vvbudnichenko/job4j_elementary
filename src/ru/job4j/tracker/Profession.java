@@ -2,9 +2,9 @@ package ru.job4j.tracker;
 import java.time.*;
 
 public class Profession {
-    String name;
-    String surname;
-    String education;
+    private String name;
+    private String surname;
+    private String education;
     private LocalDate birthday;
 
     public Profession() {
@@ -26,4 +26,3 @@ public class Profession {
         return education;
     }
 }
-

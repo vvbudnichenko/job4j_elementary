@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 public class Programmer extends Engineer {
-    String frontend;
-    String backend;
+    private String frontend;
+    private String backend;
 
     public Programmer(String name, String surname, String education, int day, int month, int year, String diagnose) {
         super(name, surname, education, day, month, year, diagnose);

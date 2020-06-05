@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 public class Surgeon extends Doctor {
-    boolean operation;
-    boolean inspection;
+    private boolean operation;
+    private boolean inspection;
 
     public Surgeon(String name, String surname, String education, int day, int month, int year, String diagnose) {
         super(name, surname, education, day, month, year, diagnose);

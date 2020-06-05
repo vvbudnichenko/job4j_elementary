@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 public class Dentist extends Doctor {
-    String man;
-    String woman;
+    private String man;
+    private String woman;
 
     public Dentist(String name, String surname, String education, int day, int month, int year, String diagnose) {
         super(name, surname, education, day, month, year, diagnose);

@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 public class Engineer extends Profession {
-    String highLevel;
-    String site;
+    private String highLevel;
+    private String site;
 
     public Engineer() {
     }

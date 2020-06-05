@@ -1,8 +1,8 @@
 package ru.job4j.tracker;
 
 public class Builder extends Engineer {
-    String draftsman;
-    String structural;
+    private String draftsman;
+    private String structural;
 
     public Builder(String name, String surname, String education, int day, int month, int year, String diagnose) {
         super(name, surname, education, day, month, year, diagnose);

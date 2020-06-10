@@ -10,6 +10,7 @@ public class ShopTest {
         Product cola = new Product("Cola", 10);
         Product vesi = new Product("Vesi", 4);
         Product kvas = new Product("Kvas", 19);
+
         int entery = 5;
         Product[] prody = new Product[entery];
         prody[0] = cola;
@@ -27,6 +28,7 @@ public class ShopTest {
         Product cola = new Product("Cola", 10);
         Product vesi = new Product("Vesi", 4);
         Product kvas = new Product("Kvas", 19);
+
         int entery = 5;
         Product[] prody = new Product[entery];
         prody[0] = cola;

@@ -72,7 +72,7 @@ public class Shop {
             } products[products.length - 1] = null;
             Product pr = products[index];
             if (pr != null) {
-                System.out.println(pr.getName() + " " + pr.getCount());
+                System.out.println(pr.getName() + "  " + pr.getCount());
             } else {
                     System.out.println("null");
             }

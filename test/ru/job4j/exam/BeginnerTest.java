@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class BeginnerTest {
 
-    @Test
+   /* @Test
     public void sameQuantity() {
         int[] fir = new int[] {5, 5, 5, 4, 5};
         int[] sec = new int[] {5, 5, 4, 5, 5};
@@ -22,7 +22,7 @@ public class BeginnerTest {
         int[] result = Beginner.sameQuantity(fir, sec);
         int[] expected = new int[]{1, 0, 0, 0, 3, 0, 7};
         assertThat(result, is(expected));
-    }
+    }*/
 
     @Test
     public void orderOr() {
@@ -44,5 +44,29 @@ public class BeginnerTest {
         boolean expect = false;
         boolean result = Beginner.orderOr(input);
         assertThat(result, is(expect));
+    }
+    @Test
+    public void sameQuantity13() {
+        int[] fir = new int[]{1, 3};
+        int[] sec = new int[]{3, 1};
+        int[] result = Beginner.isSame(fir, sec);
+        int[] expected = new int[]{1, 3};
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void sameQuantity1() {
+        int[] fir = new int[]{1, 2};
+        int[] sec = new int[]{3, 1};
+        int[] result = Beginner.isSame(fir, sec);
+        int[] expected = new int[]{1, 0};
+        assertThat(result, is(expected));
+    }
+    @Test
+    public void sameQuantity117() {
+        int[] fir = new int[]{1, 2, 5, 7};
+        int[] sec = new int[]{1, 1, 3, 7};
+        int[] result = Beginner.isSame(fir, sec);
+        int[] expected = new int[]{1, 0, 0, 7};
+        assertThat(result, is(expected));
     }
 }

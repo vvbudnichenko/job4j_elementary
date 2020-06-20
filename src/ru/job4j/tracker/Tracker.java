@@ -35,11 +35,14 @@ public class Tracker {
         }
         return result;
     }
-   /* public boolean replace(int id, ItemFive itemFive) {
-        int index = indexOf(id);
-        itemFive.setId(id);
-        items[index] = itemFive;
-    }*/
+   public boolean replace(int id, ItemFive itemFive) {
+       int index = indexOf(id);
+       if (items[index].getId() != 0 && items[index].getId() == (id)) {
+           items[index] = itemFive;
+           itemFive.setId(id);
+       }
+       return true;
+   }
     private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < size; index++) {

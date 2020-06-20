@@ -14,49 +14,39 @@ public class Tracker {
     }
 
     public ItemFive findById(int id) {
-        ItemFive rsl = null;
-        for (int index = 0; index < size; index++) {
-            ItemFive itemFive = items[index];
-            if (itemFive.getId() == id) {
-                rsl = itemFive;
-                break;
-            }
-        }
-        return rsl;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
     }
 
-    public ItemFive[] findAll(ItemFive[] listOfRequests) {
-        int size = 0;
-        ItemFive[] resulty = new ItemFive[size];
-        for (int i = 0; i < listOfRequests.length; i++) {
-            ItemFive listy = listOfRequests[i];
-            if (listy != null) {
-                resulty[size] = listy;
-                size++;
-            }
-        }
-        resulty = Arrays.copyOf(resulty, size);
-        for (int index = 0; index < resulty.length; index++) {
-            System.out.println(resulty[index]);
-        }
-        return resulty;
+    public ItemFive[] findAll() {
+        return Arrays.copyOf(items, size);
     }
 
     public ItemFive[] findByName(String key) {
-        int size = 0;
         ItemFive[] result = new ItemFive[size];
-        for (int i = 0; i <= size; i++) {
+        int size = 0;
+        for (int i = 0; i <= this.size; i++) {
             ItemFive itemFive = items[i];
-            if (itemFive != null) {
+            if (itemFive.equals(key)) {
                 result[size] = itemFive;
                 size++;
-            }
         }
         result = Arrays.copyOf(result, size);
-        for (int index = 0; index < result.length; index++) {
-            System.out.println(result[index]);
         }
         return result;
+    }
+   /* public boolean replace(int id, ItemFive itemFive) {
+        int index = indexOf(id);
+        itemFive.setId(id);
+        items[index] = itemFive;
+    }*/
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                rsl = index;
+            }
+        } return rsl;
     }
 }
 

@@ -37,7 +37,9 @@ public class Tracker {
     }
    public boolean replace(int id, ItemFive itemFive) {
        int index = indexOf(id);
-       if (index != -1) {
+       if (index == -1) {
+           System.out.println("This value can not be -1");
+       } else {
            items[index] = itemFive;
            itemFive.setId(id);
        }
@@ -54,13 +56,14 @@ public class Tracker {
      public boolean delete(int id) {
         int temp = indexOf(id);
         items[temp] = null;
-        if (items[temp] == null) {
+        if (items[temp] != null) {
+            System.out.println("This value can not be null");
+         } else {
             int start = temp + 1;
             int size = this.size - temp;
             System.arraycopy(items, start, items, temp, size);
             items[this.size - 1] = null;
             this.size--;
-
         }
         return true;
      }

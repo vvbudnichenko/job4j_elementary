@@ -30,43 +30,48 @@ public class Tracker {
             if (itemFive.equals(key)) {
                 result[size] = itemFive;
                 size++;
-        }
-        result = Arrays.copyOf(result, size);
+            }
+            result = Arrays.copyOf(result, size);
         }
         return result;
     }
-   public boolean replace(int id, ItemFive itemFive) {
-       int index = indexOf(id);
-       if (index == -1) {
-           System.out.println("This value can not be -1");
-       } else {
-           items[index] = itemFive;
-           itemFive.setId(id);
-       }
-       return true;
-   }
+
+    public boolean replace(int id, ItemFive itemFive) {
+        boolean rsl = true;
+        int index = indexOf(id);
+        if (index != -1) {
+            items[index] = itemFive;
+            itemFive.setId(id);
+        } else {
+            rsl = false;
+        }
+        return rsl;
+    }
+
     private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < size; index++) {
             if (items[index].getId() == id) {
                 rsl = index;
             }
-        } return rsl;
+        }
+        return rsl;
     }
-     public boolean delete(int id) {
+
+    public boolean delete(int id) {
         boolean rsl = true;
         int temp = indexOf(id);
-        if (temp == -1) {
-           rsl = false;
-         } else {
+        if (temp != -1) {
             int start = temp + 1;
             int size = this.size - temp;
             System.arraycopy(items, start, items, temp, size);
             items[this.size - 1] = null;
             this.size--;
+        } else {
+            rsl = false;
         }
         return rsl;
-     }
+    }
 }
 
 

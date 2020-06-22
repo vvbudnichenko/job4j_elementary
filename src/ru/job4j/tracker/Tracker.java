@@ -54,10 +54,10 @@ public class Tracker {
         } return rsl;
     }
      public boolean delete(int id) {
+        boolean rsl = true;
         int temp = indexOf(id);
-        items[temp] = null;
-        if (items[temp] != null) {
-            System.out.println("This value can not be null");
+        if (temp == -1) {
+           rsl = false;
          } else {
             int start = temp + 1;
             int size = this.size - temp;
@@ -65,7 +65,7 @@ public class Tracker {
             items[this.size - 1] = null;
             this.size--;
         }
-        return true;
+        return rsl;
      }
 }
 

@@ -5,18 +5,30 @@ import java.util.Scanner;
 public class Matches {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int beginning = 11;
+        int total = 11;
+        int step;
         System.out.println("Игра началась тяни списку");
-        for (int i = 0; beginning > 0; i++) {
-            String word = i % 2 == 0 ? "первый" : "второй";
-            System.out.print("Ходит " + word + " игрок: ");
-            int step = Integer.valueOf(input.nextLine());
-            beginning -= step;
-            System.out.println("Осталось " + beginning + " спичек, игра продолжается... ");
-            System.out.println();
-            if (beginning == 0) {
-                System.out.println("Игра закончена. ");
+        while (true) {
+            System.out.print("Ходит первый игрок: ");
+            do {
+                step = Integer.valueOf(input.nextLine());
+            } while (step > 3 || step < 1);
+            total -= step;
+            if (total <= 0) {
+                System.out.println("Победил первый игрок");
+                break;
             }
+            System.out.println("Осталось " + total);
+            System.out.print("Ходит второй игрок: ");
+            do {
+                step = Integer.valueOf(input.nextLine());
+            } while (step > 3 || step < 1);
+            total -= step;
+            if (total <= 0) {
+                System.out.println("Победил второй игрок");
+                break;
+            }
+            System.out.println("Осталось " + total);
         }
     }
 }

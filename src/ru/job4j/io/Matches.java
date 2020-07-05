@@ -10,21 +10,22 @@ public class Matches {
         int total = 11;
         System.out.println("Игра началась. Всего 11 спичек.");
         while (total > 0) {
-            System.out.print("Тяни 1, 2 или 3 спички: ");
+            String name = player ? "Игрок 1: " : "Игрок 2: ";
+            System.out.print(name + " Тяни 1, 2 или 3 спички: ");
             int step = Integer.valueOf(input.nextLine());
-            player = !player;
-            if (step > 3 || step < 1) {
-                continue;
-            } else if (total - step <= 0) {
-                if (player) {
-                    System.out.println("Первый игрок поведил!");
-                } else {
-                    System.out.println("Второй игрок победил!");
-                }
+            while (step < 1 || step > 3) {
+                System.out.print(name + "Тяни 1, 2 или 3 спички: ");
+                step = Integer.valueOf(input.nextLine());
             }
+            player = !player;
             total -= step;
             System.out.println("Осталось " + total + " спичек");
             System.out.println();
+            if (total == 0) {
+                name = player ? "Победил Игрок 1! " : "Победил Игрок 2! ";
+                System.out.println(name);
+                break;
+            }
         }
     }
 }

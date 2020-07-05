@@ -49,11 +49,12 @@ public class StartUI {
                 ItemFive rsl = tracker.findById(id);
                     System.out.println("Item exists : " + rsl.getId());
             } else if (select == 5) {
-                boolean rsl = true;
                 System.out.println("=== Find name === ");
                 System.out.print("Enter name: ");
-                String name = scanner.nextLine();
-                tracker.findByName(name);
+                ItemFive[] name = tracker.findByName(scanner.nextLine());
+                for (ItemFive rsl : name) {
+                    System.out.println("Hello " + rsl.getName());
+                }
             } else if (select == 6) {
                 run = false;
             }

@@ -25,15 +25,13 @@ public class Tracker {
     public ItemFive[] findByName(String key) {
         ItemFive[] result = new ItemFive[size];
         int size = 0;
-        for (int i = 0; i <= this.size; i++) {
+        for (int i = 0; i < this.size; i++) {
             ItemFive itemFive = items[i];
-            if (itemFive.equals(key)) {
-                result[size] = itemFive;
-                size++;
+            if (itemFive.getName().equals(key)) {
+                result[size++] = items[i];
             }
-            result = Arrays.copyOf(result, size);
         }
-        return result;
+        return Arrays.copyOf(result, size);
     }
 
     public boolean replace(int id, ItemFive itemFive) {
@@ -52,6 +50,7 @@ public class Tracker {
         for (int index = 0; index < size; index++) {
             if (items[index].getId() == id) {
                 rsl = index;
+                break;
             }
         }
         return rsl;

@@ -23,7 +23,7 @@ public class StartUI {
                 System.out.println("=== To edit an item do pushing === ");
                 String name = input.askStr("Enter name: ");
                 ItemFive newItem = new ItemFive(name);
-                int id = Integer.valueOf(input.askInt("ID"));
+                int id = input.askInt("ID");
                 if (tracker.replace(id, newItem)) {
                     System.out.println("Item replaced");
                 } else {
@@ -31,7 +31,7 @@ public class StartUI {
                 }
             } else if (select == 3) {
                 System.out.println("=== Delete items === ");
-                int id = Integer.valueOf(input.askStr("Enter id: "));
+                int id = input.askInt("Enter id: ");
                 if (tracker.delete(id)) {
                     System.out.println("Item deleted");
                 } else {
@@ -39,23 +39,22 @@ public class StartUI {
                 }
             } else if (select == 4) {
                 System.out.println("=== Find ID === ");
-                int id = Integer.valueOf(input.askInt("Enter id: "));
+                int id = input.askInt("Enter id: ");
                 ItemFive rsl = tracker.findById(id);
-                if (rsl == null) {
+                if (rsl != null) {
                     System.out.println("Item: " + rsl.getName() + ". Id number : " + rsl.getId());
-                } else {
+                } else if (rsl == null) {
                     System.out.println("Item not found");
                 }
             } else if (select == 5) {
                 System.out.println("=== Find name === ");
                 ItemFive[] name = tracker.findByName(input.askStr("Enter name: "));
-                if (name == null) {
-                    System.out.println("Item not found");
+                if (name.length > 0) {
                     for (int i = 0; i < name.length; i++) {
                         ItemFive nextStep = name[i];
                         System.out.println("Item: " + nextStep.getName() + "; ID number: " + nextStep.getId());
                     }
-                } else {
+                } else if (name.length <= 0) {
                         System.out.println("Item not found");
                 }
             } else if (select == 6) {

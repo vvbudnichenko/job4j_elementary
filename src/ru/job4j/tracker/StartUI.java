@@ -8,6 +8,16 @@ public class StartUI {
         ItemFive itemFive = new ItemFive(name);
         tracker.add(itemFive);
     }
+
+    public static void findAllItem(Input input, Tracker tracker) {
+        System.out.println("=== Push to show all items === ");
+        ItemFive[] array = tracker.findAll();
+        for (int i = 0; i < array.length; i++) {
+            ItemFive result = array[i];
+            System.out.println("Item: " + result.getName() + ". Id number : " + result.getId());
+        }
+    }
+
     public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== To edit an item do pushing === ");
         String name = input.askStr("Enter name: ");
@@ -19,6 +29,7 @@ public class StartUI {
             System.out.println("Error");
         }
     }
+
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete items === ");
         int id = input.askInt("Enter id: ");
@@ -26,6 +37,29 @@ public class StartUI {
             System.out.println("Item deleted");
         } else {
             System.out.println("Error");
+        }
+    }
+
+    public static void findByIdItem(Input input, Tracker tracker) {
+        System.out.println("=== Find ID === ");
+        int id = input.askInt("Enter id: ");
+        ItemFive rsl = tracker.findById(id);
+        if (rsl != null) {
+            System.out.println("Item: " + rsl.getName() + ". Id number : " + rsl.getId());
+        } else if (rsl == null) {
+            System.out.println("Item not found");
+        }
+    }
+    public static void findByNameItem(Input input, Tracker tracker) {
+        System.out.println("=== Find name === ");
+        ItemFive[] name = tracker.findByName(input.askStr("Enter name: "));
+        if (name.length > 0) {
+            for (int i = 0; i < name.length; i++) {
+                ItemFive nextStep = name[i];
+                System.out.println("Item: " + nextStep.getName() + "; ID number: " + nextStep.getId());
+            }
+        } else if (name.length <= 0) {
+            System.out.println("Item not found");
         }
     }
         public void init(Input input, Tracker tracker) {
@@ -36,36 +70,15 @@ public class StartUI {
             if (select == 0) {
                 StartUI.createItem(input, tracker);
             } else if (select == 1) {
-                System.out.println("=== Push to show all items === ");
-                ItemFive[] array = tracker.findAll();
-                for (int i = 0; i < array.length; i++) {
-                    ItemFive result = array[i];
-                    System.out.println("Item: " + result.getName() + ". Id number : " + result.getId());
-                }
+                StartUI.findAllItem(input, tracker);
             } else if (select == 2) {
                 StartUI.replaceItem(input, tracker);
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
-                System.out.println("=== Find ID === ");
-                int id = input.askInt("Enter id: ");
-                ItemFive rsl = tracker.findById(id);
-                if (rsl != null) {
-                    System.out.println("Item: " + rsl.getName() + ". Id number : " + rsl.getId());
-                } else if (rsl == null) {
-                    System.out.println("Item not found");
-                }
+                StartUI.findByIdItem(input, tracker);
             } else if (select == 5) {
-                System.out.println("=== Find name === ");
-                ItemFive[] name = tracker.findByName(input.askStr("Enter name: "));
-                if (name.length > 0) {
-                    for (int i = 0; i < name.length; i++) {
-                        ItemFive nextStep = name[i];
-                        System.out.println("Item: " + nextStep.getName() + "; ID number: " + nextStep.getId());
-                    }
-                } else if (name.length <= 0) {
-                        System.out.println("Item not found");
-                }
+                StartUI.findByNameItem(input, tracker);
             } else if (select == 6) {
                 run = false;
             }

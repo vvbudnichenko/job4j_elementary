@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package ru.job4j.rubbish;
 
 public class Surgeon extends Doctor {
     private boolean operation;

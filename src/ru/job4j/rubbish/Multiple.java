@@ -1,4 +1,4 @@
-package job4j;
+package ru.job4j.rubbish;
 
 public class Multiple {
     public static void main(String[]args) {

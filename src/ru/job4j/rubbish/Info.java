@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.rubbish;
 
 public class Info {
     public static void main(String[]arga) {

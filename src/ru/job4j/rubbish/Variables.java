@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.rubbish;
 
 public class Variables {
     public static void main(String[]args) {

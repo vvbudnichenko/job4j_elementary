@@ -4,8 +4,10 @@ public class ItemFive {
     private int id;
     private String name;
 
-    public ItemFive(int id, String name) {
-        this.id = id;
+    public ItemFive() {
+    }
+
+    public ItemFive(String name) {
         this.name = name;
     }
 

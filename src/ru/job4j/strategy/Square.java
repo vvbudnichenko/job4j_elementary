@@ -1,7 +1,5 @@
 package ru.job4j.strategy;
 
-import ru.job4j.tracker.Input;
-
 public class Square implements Shape{
     @Override
     public String draw() {

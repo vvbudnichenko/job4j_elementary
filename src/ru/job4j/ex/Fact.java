@@ -9,13 +9,14 @@ public class Fact {
         }
     }
 
-    public static int calc(int n) throws IllegalArgumentException{
+    public static int calc(int n) throws IllegalArgumentException {
         int rsl = 1;
-        if ( n >= 0) {
-            for (int index = 1; index <= n; index++) {
-                rsl *= index;
-            }
-        } else throw new IllegalArgumentException("Errors happen");
+        for (int index = 1; index <= n; index++) {
+            rsl *= index;
+        }
+        if (n < 0) {
+            throw new IllegalArgumentException("Errors happen");
+        }
         return rsl;
     }
 }

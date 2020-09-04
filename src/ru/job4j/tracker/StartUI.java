@@ -13,31 +13,39 @@ public class StartUI {
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Please, select an item: ");
+            if (select < 0 || select >= actions.length) {
+                out.println("Wrong input, you can select: 0 ... " + (actions.length - 1));
+                continue;
+            }
             UserAction action = actions[select];
             run = action.execute(input, tracker);
         }
     }
 
-        private void showMenu(UserAction[] actions) {
-            out.println("Menu. ");
-            for (int index = 0; index < actions.length; index++) {
-                System.out.println(index + ". " + actions[index].name());
-            }
+    private void showMenu(UserAction[] actions) {
+        out.println("Menu. ");
+        for (int index = 0; index < actions.length; index++) {
+            System.out.println(index + ". " + actions[index].name());
         }
+    }
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new CreateAction(output),
-                new FindAllAction(output),
-                new ReplaceItemAction(output),
-                new DeleteItemAction(output),
-                new FindByIdAction(output),
-                new FindByNameAction(output),
-                new ExitItem(output)
-        };
-        new StartUI(output).init(input, tracker, actions);
+        try {
+            UserAction[] actions = {
+                    new CreateAction(output),
+                    new FindAllAction(output),
+                    new ReplaceItemAction(output),
+                    new DeleteItemAction(output),
+                    new FindByIdAction(output),
+                    new FindByNameAction(output),
+                    new ExitItem(output)
+            };
+            new StartUI(output).init(input, tracker, actions);
+        } catch (NumberFormatException nfe) {
+            System.out.println("False");
+        }
     }
 }

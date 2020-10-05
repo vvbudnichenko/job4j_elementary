@@ -5,12 +5,12 @@ import java.util.List;
 
 public class ConvertMatrix2List {
     public List<Integer> toList(int[][] array) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> lists = new ArrayList<>();
         for(int[] row : array)
             for (int cell : row) {
-                list.add(cell);
+                lists.add(cell);
             }
-        System.out.println(list);
-        return list;
+        System.out.println(lists);
+        return lists;
     }
 }

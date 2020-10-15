@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StartUI {
     private final Output out;
 
@@ -8,24 +11,24 @@ public class StartUI {
         this.out = out;
     }
 
-    public void init(Input input, Tracker tracker, UserAction[] actions) {
+    public void init(Input input, Tracker tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Please, select an item: ");
-            if (select < 0 || select >= actions.length) {
-                out.println("Wrong input, you can select: 0 ... " + (actions.length - 1));
+            if (select < 0 || select >= actions.size()) {
+                out.println("Wrong input, you can select: 0 ... " + (actions.size() - 1));
                 continue;
             }
-            UserAction action = actions[select];
+            UserAction action = actions.get(select);
             run = action.execute(input, tracker);
         }
     }
 
-    private void showMenu(UserAction[] actions) {
+    private void showMenu(List<UserAction> actions) {
         out.println("Menu. ");
-        for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+        for (int i = 0; i < actions.size(); i++) {
+            System.out.println(i + ". " + actions.get(i).name());
         }
     }
 
@@ -34,15 +37,14 @@ public class StartUI {
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
         try {
-            UserAction[] actions = {
-                    new CreateAction(output),
-                    new FindAllAction(output),
-                    new ReplaceItemAction(output),
-                    new DeleteItemAction(output),
-                    new FindByIdAction(output),
-                    new FindByNameAction(output),
-                    new ExitItem(output)
-            };
+            List<UserAction> actions = new ArrayList<>();
+            actions.add(new CreateAction(output));
+            actions.add(new FindAllAction(output));
+            actions.add(new ReplaceItemAction(output));
+            actions.add(new DeleteItemAction(output));
+            actions.add(new FindByIdAction(output));
+            actions.add(new FindByNameAction(output));
+            actions.add(new ExitItem(output));
             new StartUI(output).init(input, tracker, actions);
         } catch (NumberFormatException nfe) {
             System.out.println("False");

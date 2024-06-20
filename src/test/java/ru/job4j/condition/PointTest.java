@@ -16,7 +16,7 @@ class PointTest {
     }
 
     @Test
-    void when11to24then3Dot16() {
+    void when11to24then3dot16() {
         double expected = 3.16;
         int x1 = 1;
         int y1 = 1;
@@ -49,7 +49,7 @@ class PointTest {
     }
 
     @Test
-    void whenMinus12toMinus34then2dot82() {
+    void whenMinus1Minus2toMinus3Minus4then2dot82() {
         double expected = 2.82;
         int x1 = -1;
         int y1 = -2;

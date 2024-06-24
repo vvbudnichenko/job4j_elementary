@@ -11,7 +11,7 @@ public class MultipleSwitchWeek {
             case "Пятница", "Friday" -> 5;
             case "Суббота", "Saturday" -> 6;
             case "Воскресение", "Sunday" -> 7;
-            default -> 0;
+            default -> -1;
         };
     }
 
@@ -19,6 +19,5 @@ public class MultipleSwitchWeek {
         System.out.println(numberOfDay("Monday"));
         System.out.println(numberOfDay("Maanantai"));
         System.out.println(numberOfDay("Суббота"));
-
     }
 }

@@ -23,7 +23,7 @@ class FactorialTest {
 
     @Test
     void whenCalculateFactorialForZeroThenZero() {
-        int expected = 0;
+        int expected = 1;
         int number = 0;
         int output = Factorial.calculate(number);
         assertThat(output).isEqualTo(expected);

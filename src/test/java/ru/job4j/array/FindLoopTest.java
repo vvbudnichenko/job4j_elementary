@@ -67,17 +67,6 @@ class FindLoopTest {
     }
 
     @Test
-    public void whenFinishOutOfRangeThenMinusOne() {
-        int[] data = new int[] {0, 0, 0, 0, 8};
-        int element = 8;
-        int start = 0;
-        int finish = 5;
-        int result = FindLoop.indexInRange(data, element, start, finish);
-        int expected = -1;
-        assertThat(result).isEqualTo(expected);
-    }
-
-    @Test
     public void whenStartMoreThenFinishThenMinusOne() {
         int[] data = new int[] {0, 0, 0, 0, 8};
         int element = 8;

@@ -3,11 +3,11 @@ package ru.job4j.array;
 public class EndsWith {
 
     public static boolean endsWith(char[] word, char[] postfix) {
-        for (int i = word.length - 1; i >= 0; i--) {
-            for (int j = postfix.length - 1; j >= 0; j--) {
-                return word[i] == postfix[j];
+        for (int i = 0; i < postfix.length; i++) {
+            if (postfix[postfix.length - i - 1] != word[word.length - i - 1]) {
+                return false;
             }
-        }
+    }
         return true;
     }
 }

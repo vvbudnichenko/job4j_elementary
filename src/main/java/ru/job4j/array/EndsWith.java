@@ -7,7 +7,7 @@ public class EndsWith {
             if (postfix[postfix.length - i - 1] != word[word.length - i - 1]) {
                 return false;
             }
-    }
+        }
         return true;
     }
 }

@@ -7,6 +7,7 @@ public class ArrayChar {
             if (word[i] != prefix[i]) {
                 return false;
             }
-        } return true;
+        }
+        return true;
     }
 }

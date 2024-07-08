@@ -4,6 +4,7 @@ public class Fit {
 
     /**
      * Calculate ideal weight for a man based on height.
+     *
      * @param height Height in centimeters.
      * @return Ideal weight in kilograms.
      */
@@ -13,6 +14,7 @@ public class Fit {
 
     /**
      * Calculate ideal weight for a woman based on height.
+     *
      * @param height Height in centimeters.
      * @return Ideal weight in kilograms.
      */

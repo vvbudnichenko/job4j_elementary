@@ -12,6 +12,6 @@ public class College {
         first.setNumberGroup(523);
         first.setDateOfStart(new Date());
         System.out.println("Student has a full name: " + first.getFirstname() + first.getFathersName() + first.getSurname() + "."
-                + "\nStudent in a group number: " + first.getNumberGroup() + "." +  "\nDate of registration: " + first.getDateOfStart());
+                + System.lineSeparator() + "Student in a group number: " + first.getNumberGroup() + "." + System.lineSeparator() + "Date of registration: " + first.getDateOfStart());
     }
 }

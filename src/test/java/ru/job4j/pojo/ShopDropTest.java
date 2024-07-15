@@ -1,6 +1,7 @@
 package ru.job4j.pojo;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ShopDropTest {
@@ -69,5 +70,14 @@ public class ShopDropTest {
         assertThat(result[2].getName()).isEqualTo("Milk");
         assertThat(result[3].getName()).isEqualTo("Fish");
         assertThat(result[4].getName()).isEqualTo("Fruit");
+    }
+
+    @Test
+    public void whenIndexOutOfBoundsException() {
+        Product[] products = new Product[2];
+        products[0] = new Product("Milk", 10);
+        products[1] = new Product("Bread", 4);
+        Product[] result = ShopDrop.delete(products, 2);
+        assertThat(result).isEqualTo(products);
     }
 }
